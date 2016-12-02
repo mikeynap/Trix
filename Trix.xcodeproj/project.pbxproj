@@ -7,18 +7,40 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4634D0091DF1E376009A4683 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4634D0081DF1E376009A4683 /* Sparkle.framework */; };
+		4634D00B1DF1E3A7009A4683 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4634D0081DF1E376009A4683 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4634D00F1DF1E525009A4683 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 4634D00E1DF1E525009A4683 /* dsa_pub.pem */; };
+		463550891DF1534100784412 /* ffmpeg in Resources */ = {isa = PBXBuildFile; fileRef = 463550871DF1534100784412 /* ffmpeg */; };
+		4635508A1DF1534100784412 /* mp4art in Resources */ = {isa = PBXBuildFile; fileRef = 463550881DF1534100784412 /* mp4art */; };
+		4635508C1DF1535300784412 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4635508B1DF1535300784412 /* Main.storyboard */; };
 		46CBBD801DF0B534006D42E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CBBD7F1DF0B534006D42E5 /* AppDelegate.swift */; };
 		46CBBD821DF0B534006D42E5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CBBD811DF0B534006D42E5 /* ViewController.swift */; };
 		46CBBD841DF0B534006D42E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46CBBD831DF0B534006D42E5 /* Assets.xcassets */; };
-		46CBBD871DF0B534006D42E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46CBBD851DF0B534006D42E5 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		4634D00A1DF1E39E009A4683 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4634D00B1DF1E3A7009A4683 /* Sparkle.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		4634D0081DF1E376009A4683 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
+		4634D00E1DF1E525009A4683 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = dsa_pub.pem; path = Assets.xcassets/dsa_pub.dataset/dsa_pub.pem; sourceTree = "<group>"; };
+		463550871DF1534100784412 /* ffmpeg */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = ffmpeg; sourceTree = "<group>"; };
+		463550881DF1534100784412 /* mp4art */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = mp4art; sourceTree = "<group>"; };
+		4635508B1DF1535300784412 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../Main.storyboard; sourceTree = "<group>"; };
 		46CBBD7C1DF0B534006D42E5 /* Trix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46CBBD7F1DF0B534006D42E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		46CBBD811DF0B534006D42E5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		46CBBD831DF0B534006D42E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		46CBBD861DF0B534006D42E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		46CBBD881DF0B534006D42E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -27,17 +49,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4634D0091DF1E376009A4683 /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4634D0071DF1E369009A4683 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4634D0081DF1E376009A4683 /* Sparkle.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		463550861DF1530B00784412 /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+				4634D00E1DF1E525009A4683 /* dsa_pub.pem */,
+				463550871DF1534100784412 /* ffmpeg */,
+				463550881DF1534100784412 /* mp4art */,
+			);
+			name = Supporting;
+			sourceTree = "<group>";
+		};
 		46CBBD731DF0B534006D42E5 = {
 			isa = PBXGroup;
 			children = (
 				46CBBD7E1DF0B534006D42E5 /* Trix */,
 				46CBBD7D1DF0B534006D42E5 /* Products */,
+				4634D0071DF1E369009A4683 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -52,10 +94,11 @@
 		46CBBD7E1DF0B534006D42E5 /* Trix */ = {
 			isa = PBXGroup;
 			children = (
+				463550861DF1530B00784412 /* Supporting */,
 				46CBBD7F1DF0B534006D42E5 /* AppDelegate.swift */,
 				46CBBD811DF0B534006D42E5 /* ViewController.swift */,
 				46CBBD831DF0B534006D42E5 /* Assets.xcassets */,
-				46CBBD851DF0B534006D42E5 /* Main.storyboard */,
+				4635508B1DF1535300784412 /* Main.storyboard */,
 				46CBBD881DF0B534006D42E5 /* Info.plist */,
 			);
 			path = Trix;
@@ -71,6 +114,7 @@
 				46CBBD781DF0B534006D42E5 /* Sources */,
 				46CBBD791DF0B534006D42E5 /* Frameworks */,
 				46CBBD7A1DF0B534006D42E5 /* Resources */,
+				4634D00A1DF1E39E009A4683 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -120,8 +164,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4634D00F1DF1E525009A4683 /* dsa_pub.pem in Resources */,
 				46CBBD841DF0B534006D42E5 /* Assets.xcassets in Resources */,
-				46CBBD871DF0B534006D42E5 /* Main.storyboard in Resources */,
+				4635508C1DF1535300784412 /* Main.storyboard in Resources */,
+				463550891DF1534100784412 /* ffmpeg in Resources */,
+				4635508A1DF1534100784412 /* mp4art in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,17 +185,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		46CBBD851DF0B534006D42E5 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				46CBBD861DF0B534006D42E5 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		46CBBD891DF0B534006D42E5 /* Debug */ = {
@@ -246,6 +282,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Trix/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.micmoo.Trix;
@@ -259,6 +299,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Trix/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.micmoo.Trix;
@@ -286,6 +330,7 @@
 				46CBBD8D1DF0B534006D42E5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
