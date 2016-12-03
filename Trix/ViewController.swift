@@ -7,7 +7,7 @@
 //
 
 import Cocoa
-
+import Sparkle
 class TasksViewController: NSViewController {
     
     //Controller Outlets
@@ -16,6 +16,7 @@ class TasksViewController: NSViewController {
     @IBOutlet var sourcePath:NSPathControl!
     @IBOutlet var destPath:NSPathControl!
     @IBOutlet var buildButton:NSButton!
+    var updater:SUUpdater?
     
     dynamic var isRunning = false
     var buildTask:Process!
@@ -29,7 +30,17 @@ class TasksViewController: NSViewController {
             storePath = NSHomeDirectory().appending("/Downloads")
         }
         
+        updater = SUUpdater.shared()
+        
+        updater?.delegate = NSApp.delegate as! SUUpdaterDelegate!
         self.destPath.url = URL.init(fileURLWithPath: storePath)
+        updater?.automaticallyChecksForUpdates = true
+        updater?.automaticallyDownloadsUpdates = true
+    
+        updater?.checkForUpdateInformation()
+        updater?.checkForUpdatesInBackground()
+        updater?.installUpdatesIfAvailable()
+
     }
     
     @IBAction func startTask(_ sender:AnyObject) {

@@ -709,14 +709,14 @@
                                     <scrollView horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ia-Cf-ccT" userLabel="Task Output Area">
                                         <rect key="frame" x="20" y="82" width="473" height="318"/>
                                         <clipView key="contentView" id="HuI-bt-NDk">
-                                            <rect key="frame" x="1" y="1" width="456" height="316"/>
+                                            <rect key="frame" x="1" y="1" width="471" height="316"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <textView editable="NO" importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsNonContiguousLayout="YES" spellingCorrection="YES" smartInsertDelete="YES" id="QWs-YP-tY6">
-                                                    <rect key="frame" x="0.0" y="0.0" width="456" height="316"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="471" height="316"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <size key="minSize" width="456" height="316"/>
+                                                    <size key="minSize" width="471" height="316"/>
                                                     <size key="maxSize" width="473" height="10000000"/>
                                                     <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                 </textView>
@@ -728,19 +728,19 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
                                         <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="RE2-jl-f8t">
-                                            <rect key="frame" x="457" y="1" width="15" height="316"/>
+                                            <rect key="frame" x="456" y="1" width="16" height="316"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
                                     </scrollView>
                                     <stackView distribution="fill" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qgp-E3-RHe">
-                                        <rect key="frame" x="20" y="20" width="473" height="50"/>
+                                        <rect key="frame" x="20" y="20" width="491" height="50"/>
                                         <subviews>
                                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="dPH-t3-DEj">
                                                 <rect key="frame" x="0.0" y="0.0" width="317" height="50"/>
                                             </customView>
                                             <button toolTip="Start building the project" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="XSF-eS-ljq" userLabel="Build Button">
-                                                <rect key="frame" x="319" y="7.5" width="71" height="32"/>
-                                                <buttonCell key="cell" type="push" title="Build" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="xMJ-pH-eVk">
+                                                <rect key="frame" x="319" y="7.5" width="89" height="32"/>
+                                                <buttonCell key="cell" type="push" title="Convert" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="xMJ-pH-eVk">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" metaFont="system"/>
                                                 </buttonCell>
@@ -749,7 +749,7 @@
                                                 </connections>
                                             </button>
                                             <button toolTip="Stop building the project" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="v0X-ya-sxT" userLabel="Stop Button">
-                                                <rect key="frame" x="386" y="7.5" width="69" height="32"/>
+                                                <rect key="frame" x="404" y="7.5" width="69" height="32"/>
                                                 <buttonCell key="cell" type="push" title="Stop" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="4El-Wt-sBT">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" metaFont="system"/>
@@ -760,7 +760,7 @@
                                                 </connections>
                                             </button>
                                             <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="hKG-UC-SCo">
-                                                <rect key="frame" x="457" y="17" width="16" height="16"/>
+                                                <rect key="frame" x="475" y="17" width="16" height="16"/>
                                             </progressIndicator>
                                         </subviews>
                                         <visibilityPriorities>
@@ -812,18 +812,6 @@
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <customObject id="Rj7-UH-bpz" customClass="SUUpdater"/>
-                <button hidden="YES" id="Xvl-60-tUO">
-                    <rect key="frame" x="0.0" y="0.0" width="61" height="18"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="check" title="Check" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="DdS-Ev-4Hh">
-                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                        <font key="font" metaFont="system"/>
-                    </buttonCell>
-                    <connections>
-                        <action selector="checkForUpdates:" target="Rj7-UH-bpz" id="suP-If-XrO"/>
-                    </connections>
-                </button>
             </objects>
             <point key="canvasLocation" x="83.5" y="805.5"/>
         </scene>
