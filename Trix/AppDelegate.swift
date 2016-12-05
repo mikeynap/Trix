@@ -11,8 +11,6 @@ import Sparkle
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate, SUUpdaterDelegate {
 
-
-
     func applicationDidFinishLaunching(_ aNotification: Notification) {
     }
 

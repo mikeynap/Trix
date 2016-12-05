@@ -13,6 +13,7 @@
 		463550891DF1534100784412 /* ffmpeg in Resources */ = {isa = PBXBuildFile; fileRef = 463550871DF1534100784412 /* ffmpeg */; };
 		4635508A1DF1534100784412 /* mp4art in Resources */ = {isa = PBXBuildFile; fileRef = 463550881DF1534100784412 /* mp4art */; };
 		4635508C1DF1535300784412 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4635508B1DF1535300784412 /* Main.storyboard */; };
+		46BE59981DF4D82B00904749 /* CoverArtImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BE59971DF4D82B00904749 /* CoverArtImageView.swift */; };
 		46CBBD801DF0B534006D42E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CBBD7F1DF0B534006D42E5 /* AppDelegate.swift */; };
 		46CBBD821DF0B534006D42E5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CBBD811DF0B534006D42E5 /* ViewController.swift */; };
 		46CBBD841DF0B534006D42E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46CBBD831DF0B534006D42E5 /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 		463550871DF1534100784412 /* ffmpeg */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = ffmpeg; sourceTree = "<group>"; };
 		463550881DF1534100784412 /* mp4art */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = mp4art; sourceTree = "<group>"; };
 		4635508B1DF1535300784412 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../Main.storyboard; sourceTree = "<group>"; };
+		46BE59971DF4D82B00904749 /* CoverArtImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoverArtImageView.swift; sourceTree = "<group>"; };
 		46CBBD7C1DF0B534006D42E5 /* Trix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Trix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46CBBD7F1DF0B534006D42E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		46CBBD811DF0B534006D42E5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				46CBBD831DF0B534006D42E5 /* Assets.xcassets */,
 				4635508B1DF1535300784412 /* Main.storyboard */,
 				46CBBD881DF0B534006D42E5 /* Info.plist */,
+				46BE59971DF4D82B00904749 /* CoverArtImageView.swift */,
 			);
 			path = Trix;
 			sourceTree = "<group>";
@@ -180,6 +183,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46BE59981DF4D82B00904749 /* CoverArtImageView.swift in Sources */,
 				46CBBD821DF0B534006D42E5 /* ViewController.swift in Sources */,
 				46CBBD801DF0B534006D42E5 /* AppDelegate.swift in Sources */,
 			);
