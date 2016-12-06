@@ -9,11 +9,12 @@
 import Cocoa
 import Sparkle
 
-let NEncodingQuality = 3
+let NEncodingQuality = 4
 enum EncodingQuality: Int {
     case LosslessALAC = 0
-    case Lossy256AAC = 1
-    case Lossy128AAC = 2
+    case Lossy320AAC = 1
+    case Lossy256AAC = 2
+    case Lossy128AAC = 3
 }
 
 class TasksViewController: NSViewController {
@@ -160,6 +161,9 @@ class TasksViewController: NSViewController {
             case .LosslessALAC:
                 arguments.append("-acodec")
                 arguments.append("alac")
+            case .Lossy320AAC:
+                arguments.append("-b:a")
+                arguments.append("320k")
             case .Lossy256AAC:
                 arguments.append("-b:a")
                 arguments.append("256k")

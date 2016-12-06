@@ -12,9 +12,9 @@
                 <application id="hnw-xV-0zn" sceneMemberID="viewController">
                     <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
                         <items>
-                            <menuItem title="TasksProject" id="1Xt-HY-uBw">
+                            <menuItem title="Trix" id="1Xt-HY-uBw">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="TasksProject" systemMenu="apple" id="uQy-DD-JDr">
+                                <menu key="submenu" title="Trix" systemMenu="apple" id="uQy-DD-JDr">
                                     <items>
                                         <menuItem title="About TasksProject" id="5kV-Vb-QxS">
                                             <modifierMask key="keyEquivalentModifierMask"/>
@@ -48,7 +48,7 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
-                                        <menuItem title="Quit TasksProject" keyEquivalent="q" id="4sb-4s-VLi">
+                                        <menuItem title="Quit Trix" keyEquivalent="q" id="4sb-4s-VLi">
                                             <connections>
                                                 <action selector="terminate:" target="Ady-hI-5gd" id="Te7-pn-YzF"/>
                                             </connections>
@@ -716,6 +716,9 @@
                                     <menu key="menu" id="FEN-no-09d">
                                         <items>
                                             <menuItem title="Lossless ALAC" state="on" id="Vah-jY-Qp3">
+                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                            </menuItem>
+                                            <menuItem title="Lossy 320kbps AAC" state="on" id="22H-mZ-nA2">
                                                 <modifierMask key="keyEquivalentModifierMask"/>
                                             </menuItem>
                                             <menuItem title="Lossy 256kbps AAC " id="gBJ-sf-LKF"/>
