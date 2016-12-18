@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11542"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -718,11 +718,11 @@
                                             <menuItem title="Lossless ALAC" state="on" id="Vah-jY-Qp3">
                                                 <modifierMask key="keyEquivalentModifierMask"/>
                                             </menuItem>
-                                            <menuItem title="Lossy 320kbps AAC" state="on" id="22H-mZ-nA2">
+                                            <menuItem title="Lossy 320kbps MP3" id="22H-mZ-nA2">
                                                 <modifierMask key="keyEquivalentModifierMask"/>
                                             </menuItem>
-                                            <menuItem title="Lossy 256kbps AAC " id="gBJ-sf-LKF"/>
-                                            <menuItem title="Lossy 128kbps AAC" id="WWt-4q-ZQZ"/>
+                                            <menuItem title="Lossy 256kbps MP3 " id="gBJ-sf-LKF"/>
+                                            <menuItem title="Lossy 128kbps MP3" id="WWt-4q-ZQZ"/>
                                         </items>
                                     </menu>
                                 </popUpButtonCell>

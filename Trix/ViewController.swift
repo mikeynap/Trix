@@ -12,9 +12,9 @@ import Sparkle
 let NEncodingQuality = 4
 enum EncodingQuality: Int {
     case LosslessALAC = 0
-    case Lossy320AAC = 1
-    case Lossy256AAC = 2
-    case Lossy128AAC = 3
+    case Lossy320MP3 = 1
+    case Lossy256MP3 = 2
+    case Lossy128MP3 = 3
 }
 
 class TasksViewController: NSViewController {
@@ -104,7 +104,7 @@ class TasksViewController: NSViewController {
             let fileManager = FileManager.default
             let enumerator = fileManager.enumerator(atPath: sourceLocation)
             while let element = enumerator?.nextObject() as? String {
-                if enumerator!.level > 1 || !element.hasSuffix("m4a"){
+                if enumerator!.level > 1 || (!element.hasSuffix("m4a") && !element.hasSuffix("mp3")){
                     continue
                 }
                 do {
@@ -143,7 +143,7 @@ class TasksViewController: NSViewController {
         
         if let sourceURL = sourcePath.url {
             let songURL = sourceURL.path + "/" + flac
-            let outSong = songURL + ".m4a"
+            var outSong = ""
             var arguments:[String] = []
             arguments.append("-y")
             arguments.append("-loglevel")
@@ -161,15 +161,25 @@ class TasksViewController: NSViewController {
             case .LosslessALAC:
                 arguments.append("-acodec")
                 arguments.append("alac")
-            case .Lossy320AAC:
+                outSong = songURL + ".m4a"
+            case .Lossy320MP3:
+                arguments.append("-codec:a")
+                arguments.append("libmp3lame")
                 arguments.append("-b:a")
                 arguments.append("320k")
-            case .Lossy256AAC:
+                outSong = songURL + ".mp3"
+            case .Lossy256MP3:
+                arguments.append("-codec:a")
+                arguments.append("libmp3lame")
                 arguments.append("-b:a")
                 arguments.append("256k")
-            case .Lossy128AAC:
+                outSong = songURL + ".mp3"
+            case .Lossy128MP3:
+                arguments.append("-codec:a")
+                arguments.append("libmp3lame")
                 arguments.append("-b:a")
                 arguments.append("128k")
+                outSong = songURL + ".mp3"
             }
             arguments.append(outSong)
             var arguments2:[String] = []
