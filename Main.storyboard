@@ -799,6 +799,17 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DuF-wB-qtn">
+                                <rect key="frame" x="342" y="67" width="95" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="check" title="Batch Mode" bezelStyle="regularSquare" imagePosition="left" toolTip="Enable Batch mode to convert all flacs in all subdirectories. (Disables custom art and album title)." inset="2" id="x2B-jz-Ywr">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="toggleBatch:" target="XfG-lQ-9wD" id="HEp-dC-Vn8"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </view>
                     <connections>

@@ -31,11 +31,14 @@ class TasksViewController: NSViewController {
     @IBOutlet var albumTitle:NSTextField!
     
     var updater:SUUpdater?
+    var batchMode:Bool = false
     
     dynamic var isRunning = false
     var buildTask:Process!
     var tasks: Int = 0
     var tasksDone: Int = 0
+    let semaphore = DispatchSemaphore(value: 8)
+
     override func viewDidLoad() {
         self.sourcePath.url = URL(fileURLWithPath: NSHomeDirectory().appending("/Downloads"))
         var storePath = NSHomeDirectory().appending("/Music/iTunes/iTunes Media/Automatically Add to iTunes.localized")
@@ -55,6 +58,7 @@ class TasksViewController: NSViewController {
     @IBAction func startTask(_ sender:AnyObject) {
         let queue = DispatchQueue.global(qos: DispatchQoS.QoSClass.userInitiated)
         let group = DispatchGroup()
+
         var sourceLocation = ""
         var finalLocation = ""
         var artURL: String?
@@ -64,10 +68,12 @@ class TasksViewController: NSViewController {
         if self.quality.indexOfSelectedItem <= NEncodingQuality {
             quality = EncodingQuality(rawValue: self.quality.indexOfSelectedItem)!
         }
-        if self.albumTitle.stringValue != "" {
+        if self.albumTitle.stringValue != "" && !batchMode {
             albumName = self.albumTitle.stringValue
         }
-        artURL = self.coverart.droppedFilePath
+        if !self.batchMode {
+            artURL = self.coverart.droppedFilePath
+        }
         if let sourceURL = sourcePath.url, let destURL = destPath.url {
             self.isRunning = true
             self.buildButton.isEnabled = false
@@ -75,12 +81,12 @@ class TasksViewController: NSViewController {
             sourceLocation = sourceURL.path
             finalLocation = destURL.path
             
+            
             let enumerator = fileManager.enumerator(atPath: sourceLocation)
             while let element = enumerator?.nextObject() as? String {
-                if enumerator!.level > 1 {
+                if self.batchMode == false && enumerator!.level > 1 {
                     continue
                 }
-                print(element)
                 if element.hasSuffix("flac") { // checks the extension
                     if let workItem = self.flacWorkItem(flac: element, albumName: albumName, artURL: artURL, quality: quality) {
                         self.jobWillStart(flac: element)
@@ -88,6 +94,8 @@ class TasksViewController: NSViewController {
                     }
                 }
             }
+            
+            
             self.progress.doubleValue = 1.0
             self.progress.maxValue = Double(self.tasks + 1)
             self.progress.startAnimation(nil)
@@ -99,16 +107,38 @@ class TasksViewController: NSViewController {
             // error
             return
         }
+
         group.notify(queue: queue, execute: {
             print("All Done");
             let fileManager = FileManager.default
             let enumerator = fileManager.enumerator(atPath: sourceLocation)
             while let element = enumerator?.nextObject() as? String {
-                if enumerator!.level > 1 || (!element.hasSuffix("m4a") && !element.hasSuffix("mp3")){
+                if self.batchMode == false && enumerator!.level > 1 {
                     continue
+                }
+                if !element.hasSuffix("m4a") && !element.hasSuffix("mp3"){
+                    continue
+                }
+                if enumerator!.level > 1 {
+                    let dir = NSURL(fileURLWithPath: finalLocation + "/" + element).deletingLastPathComponent
+                    
+                    do {
+                        try fileManager.createDirectory(at: dir!, withIntermediateDirectories: true, attributes: nil)
+                    }
+                    catch let error {
+                        print("Err making dir? \(error)")
+                    }
                 }
                 do {
                     let songName = sourceLocation + "/" + element
+                    // TODO: MoveItem duplication detection.
+                    print(finalLocation.appending("/" + element))
+                    do {
+                        try FileManager.default.removeItem(atPath: finalLocation.appending("/" + element))
+                    }
+                    catch {
+                        
+                    }
                     try FileManager.default.moveItem(atPath: songName, toPath: finalLocation.appending("/" + element))
                     try FileManager.default.removeItem(atPath: songName + "cover.jpg")
                 }
@@ -206,8 +236,8 @@ class TasksViewController: NSViewController {
             mp4artTask.launchPath = mp4art
             mp4artTask.arguments = arguments2
             
-            
             return DispatchWorkItem(qos: .userInitiated) {
+                self.semaphore.wait()
                 ffmpegTask.launch()
                 ffmpegTask.waitUntilExit()
                 
@@ -229,6 +259,7 @@ class TasksViewController: NSViewController {
         DispatchQueue.main.async {
             self.tasksDone += 1
             self.progress.increment(by: 1.0)
+            self.semaphore.signal()
         }
         print("\(self.tasksDone)/\(self.tasks)")
     }
@@ -243,6 +274,20 @@ class TasksViewController: NSViewController {
             self.isRunning = false
             
         }
+    }
+    
+    @IBAction func toggleBatch(_ sender:NSButton) {
+        print("BMB4: \(self.batchMode)")
+        if sender.state == 0 {
+            self.batchMode = false
+            self.albumTitle.isEnabled = true
+            self.coverart.isEnabled = true
+        } else {
+            self.batchMode = true
+            self.albumTitle.isEnabled = false
+            self.coverart.isEnabled = false
+        }
+        print("BM: \(self.batchMode)")
     }
 }
 
