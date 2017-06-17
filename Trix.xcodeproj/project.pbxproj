@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4634D0091DF1E376009A4683 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4634D0081DF1E376009A4683 /* Sparkle.framework */; };
-		4634D00B1DF1E3A7009A4683 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4634D0081DF1E376009A4683 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		4634D00F1DF1E525009A4683 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 4634D00E1DF1E525009A4683 /* dsa_pub.pem */; };
 		463550891DF1534100784412 /* ffmpeg in Resources */ = {isa = PBXBuildFile; fileRef = 463550871DF1534100784412 /* ffmpeg */; };
 		4635508A1DF1534100784412 /* mp4art in Resources */ = {isa = PBXBuildFile; fileRef = 463550881DF1534100784412 /* mp4art */; };
 		4635508C1DF1535300784412 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4635508B1DF1535300784412 /* Main.storyboard */; };
@@ -20,20 +17,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		4634D00A1DF1E39E009A4683 /* CopyFiles */ = {
+		4634D00A1DF1E39E009A4683 /* Copy Files */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				4634D00B1DF1E3A7009A4683 /* Sparkle.framework in CopyFiles */,
 			);
+			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		4634D0081DF1E376009A4683 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
+		461092541EF5E81000FA76CE /* bundled.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = bundled.entitlements; sourceTree = "<group>"; };
 		4634D00E1DF1E525009A4683 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = dsa_pub.pem; path = Assets.xcassets/dsa_pub.dataset/dsa_pub.pem; sourceTree = "<group>"; };
 		463550871DF1534100784412 /* ffmpeg */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = ffmpeg; sourceTree = "<group>"; };
 		463550881DF1534100784412 /* mp4art */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = mp4art; sourceTree = "<group>"; };
@@ -51,7 +48,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4634D0091DF1E376009A4683 /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,7 +57,6 @@
 		4634D0071DF1E369009A4683 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4634D0081DF1E376009A4683 /* Sparkle.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -72,6 +67,7 @@
 				4634D00E1DF1E525009A4683 /* dsa_pub.pem */,
 				463550871DF1534100784412 /* ffmpeg */,
 				463550881DF1534100784412 /* mp4art */,
+				461092541EF5E81000FA76CE /* bundled.entitlements */,
 			);
 			name = Supporting;
 			sourceTree = "<group>";
@@ -117,7 +113,7 @@
 				46CBBD781DF0B534006D42E5 /* Sources */,
 				46CBBD791DF0B534006D42E5 /* Frameworks */,
 				46CBBD7A1DF0B534006D42E5 /* Resources */,
-				4634D00A1DF1E39E009A4683 /* CopyFiles */,
+				4634D00A1DF1E39E009A4683 /* Copy Files */,
 			);
 			buildRules = (
 			);
@@ -140,6 +136,7 @@
 				TargetAttributes = {
 					46CBBD7B1DF0B534006D42E5 = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 2K3KVWQ6BZ;
 						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
@@ -168,7 +165,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4634D00F1DF1E525009A4683 /* dsa_pub.pem in Resources */,
 				46CBBD841DF0B534006D42E5 /* Assets.xcassets in Resources */,
 				4635508C1DF1535300784412 /* Main.storyboard in Resources */,
 				463550891DF1534100784412 /* ffmpeg in Resources */,
@@ -285,17 +281,25 @@
 		46CBBD8C1DF0B534006D42E5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_LINK_OBJC_RUNTIME = NO;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 2K3KVWQ6BZ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = NO;
 				INFOPLIST_FILE = Trix/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.micmoo.Trix;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
@@ -304,17 +308,25 @@
 		46CBBD8D1DF0B534006D42E5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_LINK_OBJC_RUNTIME = NO;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 2K3KVWQ6BZ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = NO;
 				INFOPLIST_FILE = Trix/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.micmoo.Trix;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

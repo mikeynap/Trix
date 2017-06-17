@@ -7,7 +7,6 @@
 //
 
 import Cocoa
-import Sparkle
 
 let NEncodingQuality = 4
 enum EncodingQuality: Int {
@@ -30,7 +29,6 @@ class TasksViewController: NSViewController {
     @IBOutlet var coverart:CoverArtImageView!
     @IBOutlet var albumTitle:NSTextField!
     
-    var updater:SUUpdater?
     var batchMode:Bool = false
     
     dynamic var isRunning = false
@@ -48,11 +46,7 @@ class TasksViewController: NSViewController {
             storePath = NSHomeDirectory().appending("/Downloads")
         }
         
-        updater = SUUpdater.shared()
-        
-        updater?.delegate = NSApp.delegate as! SUUpdaterDelegate!
         self.destPath.url = URL.init(fileURLWithPath: storePath)
-        updater?.checkForUpdates(nil)
     }
     
     @IBAction func startTask(_ sender:AnyObject) {
