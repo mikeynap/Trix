@@ -30,7 +30,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		461092541EF5E81000FA76CE /* bundled.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = bundled.entitlements; sourceTree = "<group>"; };
 		4634D00E1DF1E525009A4683 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = dsa_pub.pem; path = Assets.xcassets/dsa_pub.dataset/dsa_pub.pem; sourceTree = "<group>"; };
 		463550871DF1534100784412 /* ffmpeg */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = ffmpeg; sourceTree = "<group>"; };
 		463550881DF1534100784412 /* mp4art */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = mp4art; sourceTree = "<group>"; };
@@ -67,7 +66,6 @@
 				4634D00E1DF1E525009A4683 /* dsa_pub.pem */,
 				463550871DF1534100784412 /* ffmpeg */,
 				463550881DF1534100784412 /* mp4art */,
-				461092541EF5E81000FA76CE /* bundled.entitlements */,
 			);
 			name = Supporting;
 			sourceTree = "<group>";

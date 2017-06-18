@@ -217,7 +217,7 @@ class TasksViewController: NSViewController {
                 useArtURL = artURL!
             }
             
-            arguments2.append("--add")
+            arguments2.append("--replace")
             arguments2.append(useArtURL)
             arguments2.append(outSong)
             
